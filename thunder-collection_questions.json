@@ -1,0 +1,157 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "questions",
+    "dateExported": "2023-03-23T13:41:46.041Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "ea049d41-527c-4c6c-b15d-c8b8b5752e2d",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Get Users",
+            "url": "http://127.0.0.1:3000/user",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-03-22T07:28:44.588Z",
+            "modified": "2023-03-22T18:53:24.396Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.g0U5SAOLozk3dz0mNUrvBSR-0CSewJ5eParRWg_abVk"
+            },
+            "tests": []
+        },
+        {
+            "_id": "dc4a0c45-477d-4812-b73f-719f2946a0c6",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Add Users",
+            "url": "http://127.0.0.1:3000/user",
+            "method": "POST",
+            "sortNum": 22500,
+            "created": "2023-03-22T07:28:44.590Z",
+            "modified": "2023-03-23T11:53:15.659Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "kelvin"
+                    },
+                    {
+                        "name": "email",
+                        "value": "kelvin@gmail.com"
+                    },
+                    {
+                        "name": "password",
+                        "value": "kelvin"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "c3e523da-01f6-4a83-ae89-6b4d7a14633d",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Login",
+            "url": "http://127.0.0.1:3000/login",
+            "method": "POST",
+            "sortNum": 23125,
+            "created": "2023-03-23T11:51:57.858Z",
+            "modified": "2023-03-23T11:59:17.330Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "username",
+                        "value": "kelvin"
+                    },
+                    {
+                        "name": "password",
+                        "value": "kelvin"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "c305b724-922b-4212-b322-ab3e66333b3d",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Logout",
+            "url": "http://127.0.0.1:3000/logout",
+            "method": "DELETE",
+            "sortNum": 23437.5,
+            "created": "2023-03-23T12:16:40.846Z",
+            "modified": "2023-03-23T12:17:09.132Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e7747776-9c63-4538-bfa5-c02e788a66f5",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Loggedin?",
+            "url": "http://127.0.0.1:3000/loggedin",
+            "method": "GET",
+            "sortNum": 23593.8,
+            "created": "2023-03-23T12:36:19.170Z",
+            "modified": "2023-03-23T12:37:41.616Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2cd1dce3-8618-4807-9040-7387ea8a410b",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Add Question",
+            "url": "http://127.0.0.1:3000/question",
+            "method": "POST",
+            "sortNum": 23750,
+            "created": "2023-03-22T07:28:44.591Z",
+            "modified": "2023-03-23T12:27:18.405Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "How can i make it?"
+                    },
+                    {
+                        "name": "description",
+                        "value": "trgndnfsz<sbvz"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f26d67e9-1edc-478a-892c-b25ea215ea61",
+            "colId": "32bd5368-b941-48e4-ac91-1a7eedc5ee42",
+            "containerId": "",
+            "name": "Get Questions",
+            "url": "http://127.0.0.1:3000/question",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-03-22T07:28:44.592Z",
+            "modified": "2023-03-22T18:51:46.359Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
