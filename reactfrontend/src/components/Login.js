@@ -1,13 +1,12 @@
 import {useContext, useState} from 'react'
 import { AuthContext } from '../context/AuthContext'
 
-function Register() {
+function Login() {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
     const {login } = useContext(AuthContext)
     
-
     const handleSubmit = (e)=>{
         // send Data to rails
         e.preventDefault()
@@ -31,4 +30,4 @@ function Register() {
   )
 }
 
-export default Register
+export default Login

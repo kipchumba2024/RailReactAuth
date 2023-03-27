@@ -4,11 +4,12 @@ import Swal from "sweetalert2"
 
 export const AuthContext = createContext();
 
-
-
 export default function AuthProvider({children}) 
 {
     const navigate = useNavigate()
+    const [user, setUser] = useState()
+
+    const [change, setOnChange] = useState(false)
     // login
     const login = (username, password) =>{
         fetch("/login",{
@@ -23,34 +24,38 @@ export default function AuthProvider({children})
         )
         .then(res=>res.json())
         .then(response=>{
-            // utilize
-            console.log(response)
-            if(response.errors){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: response.errors,
-                    footer: '<a href="">Why do I have this issue?</a>'
-                  })
+            setOnChange(!change)
+            if(response.errors)
+            {
+                 
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: response.errors,
+                        footer: '<a href="">Why do I have this issue?</a>'
+                    })
             }
-            else if(response.user){
-                  navigate("/dashboard")  
+            else if(response.loggedin)
+            {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Loggedin Successfully!',
+                    title: 'LoggedIn successfully!',
                     showConfirmButton: false,
-                    timer: 1500
-                    })
+                    timer: 3000
+                  })
+                  navigate("/dashboard")
 
             }
             else{
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'Something went wrong!',
-                  })
+                    text: "Something went wrong!",
+                })
+
             }
+            
         })
     }
 
@@ -61,11 +66,46 @@ export default function AuthProvider({children})
 
      // Logout
      const logout = () =>{
-           console.log("Hello from context")
+        fetch("/logout",{
+            method: "DELETE"
+        })
+        .then(response=>{
+            // 
+            setOnChange(!change)
+
+            setUser()
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'LoggedOut successfully!',
+                showConfirmButton: false,
+                timer: 3000
+              })
+              navigate("/login")
+        })
     }
+   
+    // check if user is logged in
+    useEffect(()=>{
+        fetch("/loggedin",{
+            method: "GET",
+            headers:{
+                "Content-Type": "application/json"
+            },
+        }
+        )
+        .then(res=>res.json())
+        .then(response=>{
+            setUser(response)
+        }
+        )
+    }, [change])
 
     const contextData = {
-        login, register, logout
+        user,
+        login, 
+        register, 
+        logout
     }
 
   return (
